@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.chatapp.client.controller.MainController"
+            styleClass="app-root">
+
+    <left>
+        <HBox>
+            <!-- Server rail -->
+            <VBox styleClass="server-rail" prefWidth="72" minWidth="72" alignment="TOP_CENTER" spacing="8">
+                <padding><Insets top="12" bottom="12"/></padding>
+
+                <StackPane fx:id="homeButton" styleClass="server-icon, server-icon-home">
+                    <Label text="DM" styleClass="server-icon-label"/>
+                </StackPane>
+
+                <Region prefHeight="4" styleClass="rail-separator"/>
+
+                <ListView fx:id="serverListView" styleClass="server-list" VBox.vgrow="ALWAYS"/>
+
+                <StackPane fx:id="addServerButton" styleClass="server-icon, server-icon-add">
+                    <Label text="+" styleClass="server-icon-label"/>
+                </StackPane>
+            </VBox>
+
+            <!-- Secondary sidebar: channels or friends/DMs -->
+            <VBox styleClass="sidebar" prefWidth="240" minWidth="240">
+                <HBox styleClass="sidebar-header" alignment="CENTER_LEFT" spacing="8">
+                    <Label fx:id="sidebarTitleLabel" text="Direct Messages" styleClass="sidebar-title" HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="sidebarActionButton" text="＋" styleClass="icon-button"/>
+                </HBox>
+
+                <ScrollPane fx:id="sidebarScrollPane" fitToWidth="true" styleClass="sidebar-scroll" VBox.vgrow="ALWAYS">
+                    <VBox fx:id="sidebarListContainer" styleClass="sidebar-list" spacing="2">
+                        <padding><Insets top="8" right="8" bottom="8" left="8"/></padding>
+                    </VBox>
+                </ScrollPane>
+
+                <HBox styleClass="current-user-bar" alignment="CENTER_LEFT" spacing="8">
+                    <padding><Insets top="8" right="8" bottom="8" left="8"/></padding>
+                    <StackPane styleClass="avatar-small">
+                        <Circle fx:id="myAvatarCircle" radius="16"/>
+                        <Label fx:id="myAvatarLabel" styleClass="avatar-label-small"/>
+                    </StackPane>
+                    <VBox spacing="0" HBox.hgrow="ALWAYS">
+                        <Label fx:id="myUsernameLabel" styleClass="current-user-name"/>
+                        <Label fx:id="myStatusLabel" text="Online" styleClass="current-user-status"/>
+                    </VBox>
+                    <Button fx:id="presenceButton" text="●" styleClass="icon-button"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </left>
+
+    <center>
+        <VBox styleClass="chat-area">
+            <HBox styleClass="chat-header" alignment="CENTER_LEFT" spacing="8">
+                <padding><Insets top="0" right="16" bottom="0" left="16"/></padding>
+                <Label fx:id="chatHeaderLabel" text="Select a conversation" styleClass="chat-header-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="membersToggleButton" text="Members" styleClass="icon-button"/>
+            </HBox>
+
+            <ScrollPane fx:id="messageScrollPane" fitToWidth="true" styleClass="message-scroll" VBox.vgrow="ALWAYS">
+                <VBox fx:id="messageListContainer" styleClass="message-list" spacing="2">
+                    <padding><Insets top="12" right="16" bottom="12" left="16"/></padding>
+                </VBox>
+            </ScrollPane>
+
+            <Label fx:id="typingIndicatorLabel" styleClass="typing-indicator"/>
+
+            <HBox styleClass="input-bar" alignment="CENTER" spacing="8">
+                <padding><Insets top="8" right="16" bottom="16" left="16"/></padding>
+                <TextField fx:id="messageInput" promptText="Message..." styleClass="message-input" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="sendButton" text="Send" styleClass="primary-button"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <right>
+        <VBox fx:id="membersPanel" styleClass="members-panel" prefWidth="220" minWidth="220" managed="false" visible="false">
+            <Label text="Members" styleClass="sidebar-title">
+                <padding><Insets top="16" right="12" bottom="8" left="12"/></padding>
+            </Label>
+            <ScrollPane fitToWidth="true" styleClass="sidebar-scroll" VBox.vgrow="ALWAYS">
+                <VBox fx:id="membersListContainer" spacing="2">
+                    <padding><Insets top="0" right="8" bottom="8" left="8"/></padding>
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </right>
+
+</BorderPane>

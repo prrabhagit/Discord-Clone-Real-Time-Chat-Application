@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.chatapp.client.controller.RegisterController"
+           styleClass="auth-root">
+    <VBox alignment="CENTER" spacing="16" maxWidth="380" styleClass="auth-card">
+        <padding>
+            <Insets top="36" right="36" bottom="36" left="36"/>
+        </padding>
+
+        <Label text="Create an account" styleClass="auth-title"/>
+        <Label text="Join the conversation" styleClass="auth-subtitle"/>
+
+        <VBox spacing="6">
+            <Label text="USERNAME" styleClass="field-label"/>
+            <TextField fx:id="usernameField" promptText="3-20 characters, letters/numbers/_" styleClass="auth-field"/>
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="PASSWORD" styleClass="field-label"/>
+            <PasswordField fx:id="passwordField" promptText="At least 6 characters" styleClass="auth-field"/>
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="CONFIRM PASSWORD" styleClass="field-label"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Re-enter your password" styleClass="auth-field"/>
+        </VBox>
+
+        <Label fx:id="errorLabel" wrapText="true" styleClass="auth-error"/>
+
+        <Button fx:id="registerButton" text="Sign Up" maxWidth="Infinity" styleClass="primary-button"/>
+
+        <Button fx:id="goToLoginButton" text="Already have an account? Log in" styleClass="link-button"/>
+    </VBox>
+</StackPane>

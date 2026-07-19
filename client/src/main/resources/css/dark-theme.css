@@ -1,0 +1,420 @@
+/* ============================================================
+   ChatApp - Discord-inspired dark theme
+   ============================================================ */
+
+* {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.app-root {
+    -fx-background-color: #313338;
+}
+
+/* ---------- Auth screens (login/register) ---------- */
+
+.auth-root {
+    -fx-background-color: linear-gradient(to bottom right, #23272a, #2b2d31);
+}
+
+.auth-card {
+    -fx-background-color: #313338;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 30, 0.2, 0, 10);
+}
+
+.auth-title {
+    -fx-text-fill: #f2f3f5;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.auth-subtitle {
+    -fx-text-fill: #b5bac1;
+    -fx-font-size: 13px;
+}
+
+.field-label {
+    -fx-text-fill: #b5bac1;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.auth-field {
+    -fx-background-color: #1e1f22;
+    -fx-text-fill: #dbdee1;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-border-color: transparent;
+    -fx-padding: 10 12;
+    -fx-font-size: 14px;
+}
+
+.auth-field:focused {
+    -fx-border-color: #5865F2;
+    -fx-border-width: 1;
+}
+
+.auth-error {
+    -fx-text-fill: #fa777c;
+    -fx-font-size: 12px;
+}
+
+.auth-footer {
+    -fx-text-fill: #949ba4;
+    -fx-font-size: 12px;
+}
+
+/* ---------- Buttons ---------- */
+
+.primary-button {
+    -fx-background-color: #5865F2;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-transition: -fx-background-color 0.15s ease-in-out;
+}
+
+.primary-button:hover {
+    -fx-background-color: #4752c4;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #3c45a5;
+}
+
+.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #00a8fc;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 4 0;
+}
+
+.link-button:hover {
+    -fx-underline: true;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #b5bac1;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-background-radius: 4;
+    -fx-padding: 6 10;
+}
+
+.icon-button:hover {
+    -fx-background-color: #3f4147;
+    -fx-text-fill: #dbdee1;
+}
+
+/* ---------- Server rail ---------- */
+
+.server-rail {
+    -fx-background-color: #1e1f22;
+}
+
+.server-list {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.server-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 4 0;
+}
+
+.rail-separator {
+    -fx-background-color: #35363c;
+    -fx-max-width: 32;
+}
+
+.server-icon {
+    -fx-min-width: 48;
+    -fx-min-height: 48;
+    -fx-max-width: 48;
+    -fx-max-height: 48;
+    -fx-background-color: #313338;
+    -fx-background-radius: 24;
+    -fx-cursor: hand;
+    -fx-transition: -fx-background-radius 0.15s, -fx-background-color 0.15s;
+}
+
+.server-icon:hover {
+    -fx-background-color: #5865F2;
+    -fx-background-radius: 16;
+}
+
+.server-icon-selected {
+    -fx-background-color: #5865F2;
+    -fx-background-radius: 16;
+}
+
+.server-icon-home {
+    -fx-background-color: #313338;
+}
+
+.server-icon-add .server-icon-label {
+    -fx-text-fill: #23a559;
+}
+
+.server-icon-add:hover {
+    -fx-background-color: #23a559;
+}
+
+.server-icon-add:hover .server-icon-label {
+    -fx-text-fill: white;
+}
+
+.server-icon-label {
+    -fx-text-fill: #dbdee1;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* ---------- Secondary sidebar (channels / DMs) ---------- */
+
+.sidebar {
+    -fx-background-color: #2b2d31;
+}
+
+.sidebar-header {
+    -fx-background-color: #2b2d31;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 1);
+    -fx-padding: 12 8 12 16;
+    -fx-min-height: 46;
+}
+
+.sidebar-title {
+    -fx-text-fill: #f2f3f5;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.sidebar-scroll, .sidebar-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.sidebar-list {
+    -fx-background-color: transparent;
+}
+
+.section-label {
+    -fx-text-fill: #949ba4;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 4 4 8;
+}
+
+/* Row used for channels, DMs, friends, members, servers-list-fallback */
+.list-row {
+    -fx-background-color: transparent;
+    -fx-background-radius: 4;
+    -fx-padding: 6 8;
+    -fx-cursor: hand;
+}
+
+.list-row:hover {
+    -fx-background-color: #35373c;
+}
+
+.list-row-selected {
+    -fx-background-color: #404249;
+}
+
+.list-row-title {
+    -fx-text-fill: #949ba4;
+    -fx-font-size: 14px;
+}
+
+.list-row-selected .list-row-title, .list-row:hover .list-row-title {
+    -fx-text-fill: #f2f3f5;
+}
+
+.list-row-subtitle {
+    -fx-text-fill: #949ba4;
+    -fx-font-size: 11px;
+}
+
+.current-user-bar {
+    -fx-background-color: #232428;
+    -fx-min-height: 52;
+}
+
+.current-user-name {
+    -fx-text-fill: #f2f3f5;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.current-user-status {
+    -fx-text-fill: #949ba4;
+    -fx-font-size: 11px;
+}
+
+/* ---------- Avatars ---------- */
+
+.avatar-small {
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+}
+
+.avatar-label-small {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.avatar-medium {
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+}
+
+.avatar-label-medium {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.presence-dot {
+    -fx-stroke: #2b2d31;
+    -fx-stroke-width: 3;
+}
+
+.presence-online { -fx-fill: #23a559; }
+.presence-idle { -fx-fill: #f0b232; }
+.presence-dnd { -fx-fill: #f23f43; }
+.presence-offline { -fx-fill: #80848e; }
+
+/* ---------- Chat area ---------- */
+
+.chat-area {
+    -fx-background-color: #313338;
+}
+
+.chat-header {
+    -fx-background-color: #313338;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 1);
+    -fx-min-height: 46;
+}
+
+.chat-header-title {
+    -fx-text-fill: #f2f3f5;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.message-scroll, .message-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.message-list {
+    -fx-background-color: transparent;
+}
+
+.message-row {
+    -fx-background-radius: 4;
+    -fx-padding: 6 8;
+}
+
+.message-row:hover {
+    -fx-background-color: #2e3035;
+}
+
+.message-author {
+    -fx-text-fill: #f2f3f5;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.message-timestamp {
+    -fx-text-fill: #949ba4;
+    -fx-font-size: 11px;
+}
+
+.message-content {
+    -fx-text-fill: #dbdee1;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+.message-own .message-author {
+    -fx-text-fill: #5865F2;
+}
+
+.typing-indicator {
+    -fx-text-fill: #949ba4;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+    -fx-padding: 0 16 4 16;
+}
+
+.input-bar {
+    -fx-background-color: #313338;
+}
+
+.message-input {
+    -fx-background-color: #383a40;
+    -fx-text-fill: #dbdee1;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+    -fx-font-size: 14px;
+    -fx-border-color: transparent;
+}
+
+.message-input:focused {
+    -fx-border-color: #5865F2;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+}
+
+/* ---------- Members panel ---------- */
+
+.members-panel {
+    -fx-background-color: #2b2d31;
+}
+
+/* ---------- Scrollbars ---------- */
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb {
+    -fx-background-color: #1a1b1e;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* ---------- List views (server rail cells) ---------- */
+
+.list-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.list-cell:empty {
+    -fx-background-color: transparent;
+}
+
+/* ---------- Badges (friend request / unread counts) ---------- */
+
+.badge {
+    -fx-background-color: #f23f43;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 1 6;
+}
