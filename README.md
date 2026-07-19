@@ -1,4 +1,4 @@
-# ChatApp
+# Discord CLone Real Time Chat Application
 
 A Discord-inspired desktop chat application written in **Java 25**, using **JavaFX**
 for the UI, **MySQL** for persistence, and raw **Java Sockets** (newline-delimited
